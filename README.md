@@ -24,3 +24,14 @@ ncFv=4.5.4
 # Installation folder
 ifolder_path=/usr/local
 ```
+### Info
+If you need to install netCDF4 for python you can export the following envirorment variables (ifolder_ are defined below):
+```bash
+export HDF5_DIR=ifolder_path/hdf5
+export NETCDF4_DIR=ifolder_path/netcdf4_c
+```
+Then run:
+```bash
+sudo -E pip install netCDF4 --upgrade
+```
+
