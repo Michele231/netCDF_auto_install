@@ -150,7 +150,7 @@ sudo make install
 cd $og_path
 
 echo "Installation complete!" >> installation_log.txt
-echo -e "${GREEN}Installation complete!${GREEN}"
+echo -e "${GREEN}Installation complete!${ncFv}${ENDCOLOR}"
 
 # General comments:
 # --enable-hl          Enables high level library support, for libraries such as netcdf4-python.
