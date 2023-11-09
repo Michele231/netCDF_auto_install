@@ -142,7 +142,7 @@ cd netcdf-fortran-${ncFv}
 echo -e "${YELLOW}Installing netcdf-f version ${ncFv}${ENDCOLOR}"
 echo "Installing netcdf-f version ${ncFv}" >> installation_log.txt
 
-CPPFLAGS=-I$ifolder_ncC/include LDFLAGS=-L$ifolder_ncC/lib ./configure --enable-netcdf-4 --enable-shared --disable-dap --prefix=$ifolder_ncF 1>/dev/null
+CPPFLAGS=-I$ifolder_ncC/include LDFLAGS=-L$ifolder_ncC/lib ./configure --enable-shared --prefix=$ifolder_ncF 1>/dev/null
 make #1>/dev/null
 make check #1>/dev/null
 make install
