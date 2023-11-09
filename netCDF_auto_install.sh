@@ -9,9 +9,10 @@
 # Usage : ./netCDF_auto_install.sh
 #
 
-# You may need to install also "libxml2-dev" and "libcurl4-openssl-dev": 
+# You may need to install also "curl", "libxml2-dev" and "libcurl4-openssl-dev": 
 #                              >> sudo apt install libxml2-dev
 #                              >> sudo apt install libcurl4-openssl-dev
+#                              >> sudo apt install curl
 
 # If you need to install netCDF4 for python you can export the following 
 # envirorment variables (ifolder_ are defined below):
