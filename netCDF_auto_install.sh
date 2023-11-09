@@ -85,7 +85,7 @@ echo "Installing zlib version ${zlinv}" >> installation_log.txt
 ./configure --prefix=$ifolder_zlib 1>/dev/null
 make #1>/dev/null
 make check 1>/dev/null
-sudo make install
+make install
 
 cd $og_path
 
@@ -94,7 +94,7 @@ cd $og_path
 echo -e "${YELLOW}Downloading hdf5 version ${hdf5v}${ENDCOLOR}"
 echo "Downloading hdf5 version ${hdf5v}" >> installation_log.txt
 hdf5vv=$(echo $hdf5v | cut -d '.' -f 1,2)
-#wget --content-disposition --no-check-certificate https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-${hdf5vv}/hdf5-${hdf5v}/src/hdf5-${hdf5v}.tar.bz2
+wget --content-disposition --no-check-certificate https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-${hdf5vv}/hdf5-${hdf5v}/src/hdf5-${hdf5v}.tar.bz2
 tar xvf hdf5-${hdf5v}.tar.bz2 >/dev/null
 cd hdf5-${hdf5v}
 
@@ -104,7 +104,7 @@ echo "Installing hdf5 version ${hdf5v}" >> installation_log.txt
 ./configure --enable-shared --enable-hl --with-zlib=$ifolder_zlib --prefix=$ifolder_hdf5 1>/dev/null
 make #1>/dev/null
 make check #1>/dev/null
-sudo make install
+make install
 cd $og_path
 
 
@@ -125,7 +125,7 @@ CPPFLAGS=-I$ifolder_hdf5/include LDFLAGS=-L$ifolder_hdf5/lib ./configure --enabl
 
 make #1>/dev/null
 make check #1>/dev/null
-sudo make install
+make install
 cd $og_path
 
 
@@ -145,7 +145,7 @@ echo "Installing netcdf-f version ${ncFv}" >> installation_log.txt
 CPPFLAGS=-I$ifolder_ncC/include LDFLAGS=-L$ifolder_ncC/lib ./configure --enable-netcdf-4 --enable-shared --enable-dap --prefix=$ifolder_ncF 1>/dev/null
 make #1>/dev/null
 make check #1>/dev/null
-sudo make install
+make install
 
 cd $og_path
 
