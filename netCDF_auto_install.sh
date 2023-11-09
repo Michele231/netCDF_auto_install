@@ -28,7 +28,7 @@ hdf5v=1.12.1
 ncCv=4.9.2
 # netcdf-FORTRAN version (4.5.4)
 ncFv=4.5.4
-# Installation folder
+# Installation folder (complete)
 ifolder_path=/usr/local
 
 #############################################################################################
