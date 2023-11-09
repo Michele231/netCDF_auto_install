@@ -30,7 +30,7 @@ ncCv=4.9.2
 # netcdf-FORTRAN version (4.5.4)
 ncFv=4.5.4
 # Installation folder
-ifolder_path=.
+ifolder_path=/usr/local
 
 #############################################################################################
 
