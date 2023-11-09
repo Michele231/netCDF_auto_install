@@ -9,10 +9,9 @@
 # Usage : ./netCDF_auto_install.sh
 #
 
-# You may need to install also "curl", "libxml2-dev" and "libcurl4-openssl-dev": 
+# You may need to install also "libxml2-dev" and "libcurl4-openssl-dev": 
 #                              >> sudo apt install libxml2-dev
 #                              >> sudo apt install libcurl4-openssl-dev
-#                              >> sudo apt install curl
 
 # If you need to install netCDF4 for python you can export the following 
 # envirorment variables (ifolder_ are defined below):
@@ -122,7 +121,7 @@ cd netcdf-c-${ncCv}
 echo -e "${YELLOW}Installing netcdf-c version ${ncCv}${ENDCOLOR}"
 echo "Installing netcdf-c version ${ncCv}" >> installation_log.txt
 
-CPPFLAGS=-I$ifolder_hdf5/include LDFLAGS=-L$ifolder_hdf5/lib ./configure --enable-netcdf-4 --enable-shared --enable-dap --prefix=$ifolder_ncC 1>/dev/null
+CPPFLAGS=-I$ifolder_hdf5/include LDFLAGS=-L$ifolder_hdf5/lib ./configure --enable-netcdf-4 --enable-shared --disable-dap --prefix=$ifolder_ncC 1>/dev/null
 
 make #1>/dev/null
 make check #1>/dev/null
@@ -143,7 +142,7 @@ cd netcdf-fortran-${ncFv}
 echo -e "${YELLOW}Installing netcdf-f version ${ncFv}${ENDCOLOR}"
 echo "Installing netcdf-f version ${ncFv}" >> installation_log.txt
 
-CPPFLAGS=-I$ifolder_ncC/include LDFLAGS=-L$ifolder_ncC/lib ./configure --enable-netcdf-4 --enable-shared --enable-dap --prefix=$ifolder_ncF 1>/dev/null
+CPPFLAGS=-I$ifolder_ncC/include LDFLAGS=-L$ifolder_ncC/lib ./configure --enable-netcdf-4 --enable-shared --disable-dap --prefix=$ifolder_ncF 1>/dev/null
 make #1>/dev/null
 make check #1>/dev/null
 make install
@@ -161,4 +160,4 @@ echo -e "${GREEN}Installation complete!${ncFv}${ENDCOLOR}"
 #                      features of netCDF-4, including compression, parallel I/O, 
 #                      and the enhanced data model. Without this option (that is, 
 #                      by default) you do not get the netCDF-4/HDF5 features.
-# --enable-dap         Built with OPenDAP support.
+# --disable/enable-dap Built with OPenDAP support.
