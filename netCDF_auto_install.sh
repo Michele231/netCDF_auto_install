@@ -20,13 +20,13 @@
 # Then run: 
 #          >>sudo -E pip install netCDF4 --upgrade
 
-# zlib version (1.2.8) 
+# zlib version
 zlinv=1.2.13
-# hdf5 version (1.8.13) 
+# hdf5 version
 hdf5v=1.12.1
-# netcdf-c- version (4.7.4) 
+# netcdf-c- version
 ncCv=4.9.2
-# netcdf-FORTRAN version (4.5.4)
+# netcdf-FORTRAN version
 ncFv=4.5.4
 # Installation folder (complete)
 ifolder_path=/usr/local
@@ -142,6 +142,7 @@ cd netcdf-fortran-${ncFv}
 echo -e "${YELLOW}Installing netcdf-f version ${ncFv}${ENDCOLOR}"
 echo "Installing netcdf-f version ${ncFv}" >> installation_log.txt
 
+FFLAGS=-fallow-argument-mismatch
 CPPFLAGS=-I$ifolder_ncC/include LDFLAGS=-L$ifolder_ncC/lib ./configure --enable-shared --prefix=$ifolder_ncF 1>/dev/null
 make #1>/dev/null
 make check #1>/dev/null
