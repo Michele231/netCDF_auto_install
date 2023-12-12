@@ -9,7 +9,9 @@
 # Usage : ./netCDF_auto_install.sh
 #
 
-# You may need to install also "libxml2-dev" and "libcurl4-openssl-dev": 
+# You may need to install also "m4", "libz-dev", "libxml2-dev" and "libcurl4-openssl-dev": 
+#                              >> sudo apt install m4
+#                              >> sudo apt install libz-dev
 #                              >> sudo apt install libxml2-dev
 #                              >> sudo apt install libcurl4-openssl-dev
 
